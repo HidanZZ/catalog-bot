@@ -1,6 +1,6 @@
 const fastifyPlugin = require("fastify-plugin");
 const { Telegraf } = require("telegraf");
-
+const mongoose = require("mongoose");
 module.exports = fastifyPlugin(async (app) => {
 	const tokens = {
 		//Put your bot related informations here
