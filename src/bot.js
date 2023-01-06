@@ -6,7 +6,7 @@ module.exports = fastifyPlugin(async (app) => {
 		//Put your bot related informations here
 		APP_NAME: "hidanzCatalogBot",
 		ADMIN: "1739542280",
-		CHECKOUT_USERS: "1739542280$1262795677",
+		CHECKOUT_USERS: "1739542280$5408852199",
 		MONGO_URI:
 			"mongodb+srv://test:test@cluster.kcmwe3m.mongodb.net/?retryWrites=true&w=majority",
 	};
