@@ -10,6 +10,7 @@ module.exports = fastifyPlugin(async (app) => {
 		MONGO_URI:
 			"mongodb+srv://test:test@cluster.kcmwe3m.mongodb.net/?retryWrites=true&w=majority",
 	};
+
 	const bot = new Telegraf(process.env.BOT_TOKEN);
 	const users = {};
 	const uri = tokens.MONGO_URI;
