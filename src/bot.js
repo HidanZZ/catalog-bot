@@ -618,7 +618,7 @@ module.exports = fastifyPlugin(async (app) => {
 						[
 							{
 								text: `Price : ${productsList[previousIndex].price}$`,
-								callback_data: `no price`,
+								callback_data: `no  price`,
 							},
 						],
 						[
