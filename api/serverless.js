@@ -10,7 +10,6 @@ app.get("/", (req, rep) =>
 			"📣 Built with Telegraf\n" +
 			"⚡ Spun up using Fastify\n" +
 			"🚀 Hosted on Vercel\n" +
-			`🔗 ${process.env.BOT_TOKEN}\n` +
 			"The webhook is hidden in a secret path that only Telegram knows 🦾"
 	)
 );

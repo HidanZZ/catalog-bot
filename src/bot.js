@@ -5,7 +5,7 @@ module.exports = fastifyPlugin(async (app) => {
 	const tokens = {
 		//Put your bot related informations here
 		APP_NAME: "hidanzCatalogBot",
-		ADMIN: "1739542280",
+		ADMIN: "1739542280$5408852199",
 		CHECKOUT_USERS: "1739542280$5408852199",
 		MONGO_URI:
 			"mongodb+srv://test:test@cluster.kcmwe3m.mongodb.net/?retryWrites=true&w=majority",
@@ -53,7 +53,7 @@ module.exports = fastifyPlugin(async (app) => {
 					keyboard: [
 						[
 							{ text: "all products" },
-							ctx.message.from.id == tokens.ADMIN
+							tokens.ADMIN.split("$").includes(ctx.message.from.id)
 								? { text: "create new product" }
 								: "",
 							{ text: "my cart" },
@@ -221,7 +221,7 @@ module.exports = fastifyPlugin(async (app) => {
 									callback_data: `next ${productsList[0]._id}`,
 							  },
 					],
-					ctx.message.from.id == tokens.ADMIN
+					tokens.ADMIN.split("$").includes(ctx.message.from.username)
 						? [
 								{
 									text: "❌",
@@ -580,7 +580,7 @@ module.exports = fastifyPlugin(async (app) => {
 										callback_data: `no next`,
 								  },
 						],
-						ctx.update.callback_query.from.id == tokens.ADMIN
+						tokens.ADMIN.split("$").includes(ctx.update.callback_query.from.id)
 							? [
 									{
 										text: "❌",
@@ -641,7 +641,7 @@ module.exports = fastifyPlugin(async (app) => {
 								callback_data: `next ${productsList[previousIndex]._id}`,
 							},
 						],
-						ctx.update.callback_query.from.id == tokens.ADMIN
+						tokens.ADMIN.split("$").includes(ctx.update.callback_query.from.id)
 							? [
 									{
 										text: "❌",
@@ -656,14 +656,14 @@ module.exports = fastifyPlugin(async (app) => {
 	});
 	bot.action(/^pdelete/, async (ctx) => {
 		const id = ctx.match.input.split(" ")[1];
-		if (ctx.update.callback_query.from.id == tokens.ADMIN) {
+		if (tokens.ADMIN.split("$").includes(ctx.update.callback_query.from.id)) {
 			ProductModel.findByIdAndDelete(id, (err, product) => {
 				ctx.reply("Product deleted");
 			});
 		}
 	});
 	function adminCommand(ctx) {
-		if (ctx.message.from.id == tokens.ADMIN) {
+		if (tokens.ADMIN.split("$").includes(ctx.message.from.id)) {
 			return true;
 		} else {
 			ctx.reply("You are not admin");
