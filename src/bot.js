@@ -116,7 +116,7 @@ module.exports = fastifyPlugin(async (app) => {
 					[
 						//price with emoji
 						{
-							text: `Price : ${cart.products[index].product.price}`,
+							text: `Price : ${cart.products[index].product.price}$`,
 							callback_data: `no price`,
 						},
 					],
@@ -197,7 +197,7 @@ module.exports = fastifyPlugin(async (app) => {
 					],
 					[
 						{
-							text: `Price : ${productsList[0].price}`,
+							text: `Price : ${productsList[0].price}$`,
 							callback_data: `no price`,
 						},
 					],
@@ -287,7 +287,7 @@ module.exports = fastifyPlugin(async (app) => {
 						[
 							//price with emoji
 							{
-								text: `Price : ${productWrapper.product.price}`,
+								text: `Price : ${productWrapper.product.price}$`,
 								callback_data: `no price`,
 							},
 						],
@@ -556,7 +556,7 @@ module.exports = fastifyPlugin(async (app) => {
 						],
 						[
 							{
-								text: `Price : ${productsList[nextIndex].price}`,
+								text: `Price : ${productsList[nextIndex].price}$`,
 								callback_data: `no price`,
 							},
 						],
@@ -617,7 +617,7 @@ module.exports = fastifyPlugin(async (app) => {
 						],
 						[
 							{
-								text: `Price : ${productsList[previousIndex].price}`,
+								text: `Price : ${productsList[previousIndex].price}$`,
 								callback_data: `no price`,
 							},
 						],
